@@ -9,20 +9,18 @@ import "react-vertical-timeline-component/style.min.css";
 export default function PortfolioSection() {
   return (
     <>
-      <div className="mt-20">
+      <div>
         <div className="flex flex-col items-center text-center space-y-8">
-          <h1 className="shadow_title_primary text-7xl text-white font-bold">
-            Projects & Developments
-          </h1>
-          <h2 className="text-xl text-gray-400">
+          <h1 className="primary_title">Projects & Developments</h1>
+          <h2 className="secondary_title">
             Showcase of my latest works, projects and developments.
           </h2>
-          <div className="h-2 w-80 bg-[#E7B10A]"></div>
         </div>
         <div className="mt-10">
           <VerticalTimeline>
             {portfolioData.map((items, index) => (
               <VerticalTimelineElement
+                contentStyle={{ borderTop: "4px solid #0e9e2c" }}
                 className="vertical-timeline-element--work"
                 icon={
                   <div className="h-full center">
@@ -34,18 +32,16 @@ export default function PortfolioSection() {
                     />
                   </div>
                 }
-                iconStyle={{ background: "#E7B10A" }}
-                date={
-                  <h1 className="text-gray-400">
-                    FRENIFY LLC ( 2018 — Today )
-                  </h1>
-                }
-                key={index}>
+                iconStyle={{ background: "white" }}
+                date={<h1 className="text-gray-400">{items?.company}</h1>}
+                key={index}
+              >
                 <div className="flex flex-wrap gap-2">
                   {items?.tags?.map((items, index) => (
                     <div
-                      className="h-8 w-fit center px-4 rounded-full bg-[#E7B10A]"
-                      key={index}>
+                      className="h-8 w-fit center px-4 rounded-full bg-primary"
+                      key={index}
+                    >
                       <h1 className="text-sm font-medium capitalize text-white">
                         {items}
                       </h1>
@@ -57,7 +53,8 @@ export default function PortfolioSection() {
                 <a
                   href={items?.link}
                   target="_blank"
-                  className="text-blue-500 hover:underline">
+                  className="text-blue-500 hover:underline"
+                >
                   {items?.link}
                 </a>
                 <p className="text-gray-400">

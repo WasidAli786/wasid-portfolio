@@ -24,63 +24,51 @@ export const navData = [
 export const skillsData = [
   {
     title: "html5",
-    icon: "/images/html.svg",
+    percentage: "90",
   },
   {
     title: "css3",
-    icon: "/images/css.svg",
+    percentage: "90",
   },
   {
-    title: "bootstrap5",
-    icon: "/images/bootstrap.svg",
-  },
-  {
-    title: "tailwind css",
-    icon: "/images/tailwind.svg",
+    title: "bootstrap5 / tailwind css",
+    percentage: "95",
   },
   {
     title: "styled components",
-    icon: "/images/styledComponents.svg",
+    percentage: "85",
   },
   {
     title: "javascript",
-    icon: "/images/javascript.svg",
+    percentage: "80",
   },
   {
     title: "react js",
-    icon: "/images/react.svg",
+    percentage: "95",
   },
   {
     title: "next js",
-    icon: "/images/next-js.svg",
+    percentage: "85",
   },
   {
     title: "redux-toolkit / rtk query",
-    icon: "/images/redux.svg",
+    percentage: "95",
   },
   {
     title: "redux thunk",
-    icon: "/images/redux.svg",
+    percentage: "95",
   },
   {
-    title: "ant design",
-    icon: "/images/antd.svg",
-  },
-  {
-    title: "material ui",
-    icon: "/images/material.svg",
-  },
-  {
-    title: "chakra ui",
-    icon: "/images/chakra-ui.svg",
+    title: " material ui / ant design / chakra ui",
+    percentage: "90",
   },
   {
     title: "framer motion",
-    icon: "/images/framer.svg",
+    percentage: "80",
   },
   {
     title: "github",
-    icon: "/images/github.svg",
+    percentage: "70",
   },
 ];
 
@@ -92,6 +80,7 @@ export const portfolioData = [
     icon: "/images/react.svg",
     tags: ["React Js", "Redux Toolkit", "Chakra UI", "Framer Motion"],
     description: "",
+    company: "2021 — Today ( years)",
   },
   {
     title: "Front-end Engineer",
@@ -106,6 +95,7 @@ export const portfolioData = [
       "Bootstrap 5",
     ],
     description: "",
+    company: "2021 — Today ( years)",
   },
   {
     title: "Front-end Engineer",
@@ -114,6 +104,7 @@ export const portfolioData = [
     icon: "/images/next-js.svg",
     tags: ["React Js", "Next Js", "Rtk Query", "Tailwind CSS", "Framer Motion"],
     description: "",
+    company: "2022 — Today ( years)",
   },
   {
     title: "Front-end Engineer",
@@ -122,5 +113,21 @@ export const portfolioData = [
     icon: "/images/next-js.svg",
     tags: ["React Js", "Next Js", "Tailwind CSS", "Framer Motion"],
     description: "",
+    company: "2023 — Today ( years)",
+  },
+];
+
+export const socialData = [
+  {
+    icon: "/images/facebook.svg",
+    link: "#",
+  },
+  {
+    icon: "/images/linkedin.svg",
+    link: "#",
+  },
+  {
+    icon: "/images/github.svg",
+    link: "#",
   },
 ];

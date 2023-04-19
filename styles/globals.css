@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #0e9e2c;
+}
+
 body {
-  background: #212428;
-  /* background: #0f172a; */
-  /* background: #131c31; */
-  /* background: #212428de; */
-  /* backdrop-filter: blur(15px); */
+  background: #162025;
+  overflow-x: hidden;
 }
 
 /* list items hover effect */
@@ -15,9 +16,10 @@ body {
   position: relative;
   transition: 0.4s;
   line-height: 36px;
+  color: white;
 }
 .list_items > li:hover {
-  color: white;
+  color: var(--primary);
   cursor: pointer;
 }
 .list_items > li::before {
@@ -25,7 +27,7 @@ body {
   position: absolute;
   height: 2px;
   width: 0px;
-  background: white;
+  background: var(--primary);
   top: 100%;
   left: 0;
   transition: 0.4s;
@@ -36,12 +38,11 @@ body {
 }
 
 /* title section styling */
-.title {
-  @apply text-5xl xl:text-7xl text-white font-bold;
+.primary_title {
+  @apply text-5xl xl:text-7xl text-white font-bold tracking-wider;
 }
-.horizontal_line {
-  height: 6px;
-  background: #e7b10a;
+.secondary_title {
+  @apply text-base xl:text-lg text-gray-300 font-normal tracking-wider;
 }
 
 /* custom button styling */
@@ -58,16 +59,6 @@ body {
   letter-spacing: 1px;
 }
 .primary_button:hover {
-  background: linear-gradient(to right bottom, #212428, #16181c);
-}
-
-/* primary card styling */
-.primary_card_effect {
-  border-radius: 12px;
-  background: linear-gradient(145deg, #1e2024, #23272b);
-  box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
-}
-.primary_card_effect:hover {
   background: linear-gradient(to right bottom, #212428, #16181c);
 }
 
@@ -89,4 +80,117 @@ body {
 /* vertically and horizontally center class */
 .center {
   @apply flex items-center justify-center;
+}
+
+/* landing page image effect */
+.box::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(315deg, #00ccff, #d400d4);
+  inset: -10px 140px;
+  transition: 0.5s;
+  animation: animate 4s linear infinite;
+}
+.box:hover::before {
+  inset: -20px 0;
+}
+
+@media screen and (max-width: 992px) {
+  .box::before {
+    inset: -10px 90px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  background: #162052;
+  border-radius: 50%;
+  z-index: 1;
+}
+.content {
+  position: absolute;
+  inset: 30px;
+  border: 6px solid #070a1c;
+  z-index: 3;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.content img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+  pointer-events: none;
+  /* background: white; */
+}
+.box:hover .content img {
+  /* opacity: 0; */
+}
+
+/* button styling */
+.primary_btn {
+  position: relative;
+  height: 50px;
+  padding: 0 20px;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background-color: transparent;
+  overflow: hidden;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+.primary_btn::before {
+  content: "";
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: var(--primary);
+  transition: 0.5s ease;
+  z-index: -1;
+}
+.primary_btn:hover::before {
+  width: 105%;
+}
+.primary_btn:hover {
+  color: white;
+}
+
+/* progress bar styling */
+.skill_line::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  background: linear-gradient(315deg, #00ccff, #d400d4);
+  animation: progress 1s;
+}
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }

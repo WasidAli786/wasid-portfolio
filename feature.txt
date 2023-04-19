@@ -1,0 +1,132 @@
+home page type writer effect?
+
+/* typewriter html */
+ <div className="swipe">
+  <h1 className="hello_title text-5xl text-white tracking-wider font-semibold py-3 opacity-0">
+    Hello There !
+  </h1>
+</div>
+<div className="swipe swipe_delay1">
+  <h1 className="name_title text-8xl text-white tracking-wider font-bold py-3 opacity-0">
+    I'm Wasid
+  </h1>
+</div>
+<div className="swipe swipe_delay2 flex items-center">
+  <div className="text-5xl text-white font-medium">I'm</div>
+  <div className="typewriter_text ml-4">
+    <ul>
+      <li>
+        <span>Front-End Developer</span>
+      </li>
+      <li>
+        <span>Web Developer</span>
+      </li>
+      <li>
+        <span>UI UX Developer</span>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+
+/* swipe effect styling */
+.hello_title {
+  /* color: #1F1F1F; */
+  animation: fade 0.01s ease-out 1s forwards;
+}
+.name_title {
+  animation: fade 0.01s ease-out 1s forwards;
+}
+.designation_title {
+  animation: fade 0.01s ease-out 1s forwards;
+}
+.swipe {
+  position: relative;
+  width: fit-content;
+}
+.swipe::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--primary);
+  animation: swipe 1.5s ease-out 0.1s forwards;
+}
+/* .swipe_delay1::after {
+  animation-delay: 1s;
+}
+.swipe_delay2::after {
+  animation-delay: 1.4s;
+} */
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes swipe {
+  0% {
+    right: 100%;
+    left: 0;
+    width: 0%;
+  }
+  50% {
+    right: 0;
+    left: 0;
+    width: 100%;
+  }
+  100% {
+    right: 0;
+    left: 100%;
+    width: 0%;
+  }
+}
+
+/* typewriter styling */
+.typewriter_text {
+  line-height: 60px;
+  height: 60px;
+  overflow: hidden;
+}
+.typewriter_text li {
+  list-style: none;
+  color: var(--primary);
+  font-size: 48px;
+  font-weight: 600;
+  top: 0;
+  position: relative;
+  white-space: nowrap;
+  animation: slide 9s steps(3) infinite;
+}
+@keyframes slide {
+  100% {
+    top: -180px;
+  }
+}
+
+.typewriter_text li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-left: 2px solid var(--primary);
+  background: #212428;
+  animation: typing 3s steps(10) infinite;
+}
+
+@keyframes typing {
+  40%,
+  60% {
+    left: calc(100% + 30px);
+  }
+  100% {
+    left: 0;
+  }
+}
