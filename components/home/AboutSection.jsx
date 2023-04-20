@@ -15,7 +15,7 @@ export default function AboutSection() {
         </div>
         <div className="col-span-full md:col-span-7 space-y-6">
           <h1 className="primary_title">About Me</h1>
-          <p className="secondary_title">
+          <p className="description_title">
             Motivated and skilled Front End Engineer with number of years
             experience in building scalable and responsive web applications.
             Proficient in developing user interfaces using ReactJS Next Js and

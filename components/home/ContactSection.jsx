@@ -11,7 +11,7 @@ export default function ContactSection() {
       <div>
         <div className="flex flex-col items-center text-center space-y-8">
           <h1 className="primary_title">Get in Touch</h1>
-          <h2 className="secondary_title">
+          <h2 className="description_title">
             I am available for freelance work. Connect with me by just sending
             your email.
           </h2>
@@ -19,9 +19,11 @@ export default function ContactSection() {
         <div className="grid grid-cols-12 md:gap-10 mt-10">
           <div className="col-span-full md:col-span-6 space-y-5 order-last md:order-first mt-10 md:mt-0">
             <h1 className="text-3xl xl:text-5xl xl:leading-snug text-white font-bold tracking-wider">
-              Let's chat. <br /> Tell me about your <br /> project.
+              Let&apos;s chat. <br /> Tell me about your <br /> project.
             </h1>
-            <p className="secondary_title">Let's create something together.</p>
+            <p className="description_title">
+              Let&apos;s create something together.
+            </p>
             <ul className="text-lg text-white space-y-2">
               <li className="flex items-center">
                 <span className="block w-20">Address</span> :
@@ -72,7 +74,7 @@ export default function ContactSection() {
               placeText="Enter your message"
               label="your message"
             />
-            <Button title="send message" isFull />
+            <Button title="send message" />
           </div>
         </div>
       </div>

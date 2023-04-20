@@ -6,6 +6,7 @@ import SkillSection from "@/components/home/SkillSection";
 import ContactSection from "@/components/home/ContactSection";
 import Button from "@/components/uiElements/Button";
 import Navbar from "@/components/layout/Navbar";
+import NextImage from "@/components/NextImage";
 
 export default function Home() {
   const aboutRef = useRef(null);
@@ -74,7 +75,7 @@ export default function Home() {
                 Front-End Engineer
               </h3>
             </div>
-            <p className="secondary_title">
+            <p className="description_title">
               I design and develop services for customers of all sizes,
               specializing in creating stylish, modern websites, web services
               and online stores.
@@ -82,9 +83,15 @@ export default function Home() {
             <Button title="Hire Me" />
           </div>
           <div className="col-span-6 lg:col-span-5 flex justify-center md:justify-end mt-20 md:mt-0">
-            <div className="box relative h-60 sm:h-72 lg:h-[400px] w-60 sm:w-72 lg:min-w-[400px] bg-[rgba(0,0,0,0.5)] rounded-full overflow-hidden">
-              <div className="content">
-                <img src="/images/portfolio_pic.png" alt="wasid-portfolio" />
+            <div className="image_box relative h-60 sm:h-72 lg:h-[400px] w-60 sm:w-72 lg:min-w-[400px] bg-[rgba(0,0,0,0.5)] rounded-full overflow-hidden">
+              <div className="imageBox_content">
+                <div className="relative h-full w-full">
+                  <NextImage
+                    src="/images/portfolio_pic.png"
+                    alt="wasid-portfolio"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>

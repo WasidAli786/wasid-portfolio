@@ -5,6 +5,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import NextImage from "../NextImage";
 
 export default function PortfolioSection() {
   return (
@@ -12,7 +13,7 @@ export default function PortfolioSection() {
       <div>
         <div className="flex flex-col items-center text-center space-y-8">
           <h1 className="primary_title">Projects & Developments</h1>
-          <h2 className="secondary_title">
+          <h2 className="description_title">
             Showcase of my latest works, projects and developments.
           </h2>
         </div>
@@ -23,13 +24,10 @@ export default function PortfolioSection() {
                 contentStyle={{ borderTop: "4px solid #0e9e2c" }}
                 className="vertical-timeline-element--work"
                 icon={
-                  <div className="h-full center">
-                    <img
-                      src={items?.icon}
-                      height={30}
-                      width={30}
-                      alt={items?.title}
-                    />
+                  <div className="h-full w-full center">
+                    <div className="relative h-8 w-8">
+                      <NextImage src={items?.icon} alt={items?.title} />
+                    </div>
                   </div>
                 }
                 iconStyle={{ background: "white" }}

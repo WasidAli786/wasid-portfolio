@@ -8,7 +8,7 @@ export default function SkillSection() {
       <div>
         <div className="flex flex-col items-center text-center space-y-8">
           <h1 className="primary_title">Skills</h1>
-          <h2 className="secondary_title">
+          <h2 className="description_title">
             Power up your Web Applications with me using these Latest Tools and
             Technologies.
           </h2>
