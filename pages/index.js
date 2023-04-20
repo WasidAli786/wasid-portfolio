@@ -66,7 +66,7 @@ export default function Home() {
         <div className="min-h-[calc(100vh-70px)] md:grid grid-cols-12 md:gap-10 items-center py-10 md:py-0">
           <div className="col-span-6 lg:col-span-7 space-y-6">
             <h2 className="text-3xl xl:text-4xl text-white font-medium tracking-wider">
-              Hello, I'm
+              Hello, I&apos;m
             </h2>
             <h1 className="primary_title">Wasid Ali</h1>
             <div className="flex items-center gap-4">
