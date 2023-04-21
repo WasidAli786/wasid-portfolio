@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { navData } from "@/config/db";
-import NextImage from "../NextImage";
 import SideBar from "./SideBar";
 
 export default function Navbar({ onClick }) {
@@ -24,10 +23,10 @@ export default function Navbar({ onClick }) {
             </ul>
           </div>
           <div
-            className="relative h-7 w-7 cursor-pointer block md:hidden"
+            className="cursor-pointer block md:hidden"
             onClick={() => setIsDrawerVisible(true)}
           >
-            <NextImage src="/images/menu.svg" alt="wasid-portfolio-menu" />
+            <i className="uil uil-bars text-3xl text-white"></i>
           </div>
         </nav>
       </div>

@@ -1,6 +1,5 @@
 import React from "react";
 import { navData } from "@/config/db";
-import NextImage from "../NextImage";
 
 export default function SideBar({
   isDrawerVisible,
@@ -15,12 +14,10 @@ export default function SideBar({
         }`}
       >
         <div
-          className="absolute top-3 right-3"
+          className="absolute top-3 right-3 cursor-pointer"
           onClick={() => setIsDrawerVisible(false)}
         >
-          <div className="relative h-7 w-7 cursor-pointer">
-            <NextImage src="/images/close.svg" alt="wasid-portfolio-menu" />
-          </div>
+          <i className="uil uil-times text-2xl text-white"></i>
         </div>
         <ul className="flex flex-col divide-y divide-gray-700 py-8">
           {navData.map((items, index) => (

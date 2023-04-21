@@ -82,7 +82,7 @@ export default function Home() {
             </p>
             <Button title="Hire Me" />
           </div>
-          <div className="col-span-6 lg:col-span-5 flex justify-center md:justify-end mt-20 md:mt-0">
+          <div className="col-span-6 lg:col-span-5 flex justify-center md:justify-end mt-14 md:mt-0">
             <div className="image_box relative h-60 sm:h-72 lg:h-[400px] w-60 sm:w-72 lg:min-w-[400px] bg-[rgba(0,0,0,0.5)] rounded-full overflow-hidden">
               <div className="imageBox_content">
                 <div className="relative h-full w-full">

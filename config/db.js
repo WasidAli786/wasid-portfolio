@@ -119,15 +119,15 @@ export const portfolioData = [
 
 export const socialData = [
   {
-    icon: "/images/facebook.svg",
-    link: "#",
+    icon: <i className="uil uil-facebook"></i>,
+    link: "https://www.facebook.com/wasid.ali.16121/",
   },
   {
-    icon: "/images/linkedin.svg",
-    link: "#",
+    icon: <i className="uil uil-linkedin"></i>,
+    link: "https://www.linkedin.com/in/wasid-ali-174b76181/",
   },
   {
-    icon: "/images/github.svg",
-    link: "#",
+    icon: <i className="uil uil-github"></i>,
+    link: "https://github.com/WasidAli786",
   },
 ];

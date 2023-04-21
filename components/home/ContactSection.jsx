@@ -3,7 +3,6 @@ import Button from "../uiElements/Button";
 import TextArea from "../uiElements/TextArea";
 import TextField from "../uiElements/TextField";
 import { socialData } from "@/config/db";
-import NextImage from "../NextImage";
 
 export default function ContactSection() {
   return (
@@ -40,14 +39,11 @@ export default function ContactSection() {
             </ul>
             <div className="flex gap-5">
               {socialData?.map((items, index) => (
-                <div
-                  className="h-12 w-12 center rounded-lg border border-gray-800 cursor-pointer transition hover:scale-110"
-                  key={index}
-                >
-                  <div className="relative h-6 w-6">
-                    <NextImage src={items?.icon} alt="social_images" />
+                <a href={items?.link} target="_blank" key={index}>
+                  <div className="primary_btn h-10 w-10 center hover:scale-110">
+                    {items?.icon}
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
