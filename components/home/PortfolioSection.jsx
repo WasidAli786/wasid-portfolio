@@ -55,10 +55,7 @@ export default function PortfolioSection() {
                 >
                   {items?.link}
                 </a>
-                <p className="text-gray-400">
-                  Creative Direction, User Experience, Visual Design, Project
-                  Management, Team Leading.
-                </p>
+                <p className="text-gray-400">{items?.description}</p>
               </VerticalTimelineElement>
             ))}
           </VerticalTimeline>

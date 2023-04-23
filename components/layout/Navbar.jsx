@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { navData } from "@/config/db";
 import SideBar from "./SideBar";
+import Button from "../uiElements/Button";
 
 export default function Navbar({ onClick }) {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false);
@@ -20,6 +21,9 @@ export default function Navbar({ onClick }) {
                   {items?.title}
                 </li>
               ))}
+              <a href="/images/resume.pdf" download="Wasid_Ali_React_js">
+                <Button title="Resume" />
+              </a>
             </ul>
           </div>
           <div

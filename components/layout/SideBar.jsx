@@ -1,5 +1,6 @@
 import React from "react";
 import { navData } from "@/config/db";
+import Button from "../uiElements/Button";
 
 export default function SideBar({
   isDrawerVisible,
@@ -32,6 +33,11 @@ export default function SideBar({
               {items?.title}
             </li>
           ))}
+          <div className="center pt-5">
+            <a href="/images/resume.pdf" download="Wasid_Ali_React_js">
+              <Button title="Resume" />
+            </a>
+          </div>
         </ul>
       </div>
     </>

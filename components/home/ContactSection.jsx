@@ -1,10 +1,41 @@
-import React from "react";
+import React, { useRef } from "react";
 import Button from "../uiElements/Button";
 import TextArea from "../uiElements/TextArea";
 import TextField from "../uiElements/TextField";
 import { socialData } from "@/config/db";
+import emailjs from "@emailjs/browser";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 export default function ContactSection() {
+  const form = useRef();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const onContactFormSubmit = () => {
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          toast.success("Message sent successfully!");
+          reset();
+          console.log(result.text);
+        },
+        (error) => {
+          toast.error("Error while submitting message!");
+          console.log(error.text);
+        }
+      );
+  };
   return (
     <>
       <div>
@@ -48,29 +79,41 @@ export default function ContactSection() {
             </div>
           </div>
           <div className="col-span-full md:col-span-6">
-            <div className="sm:grid grid-cols-2 gap-5">
+            <form ref={form} onSubmit={handleSubmit(onContactFormSubmit)}>
+              <div className="sm:grid grid-cols-2 gap-5">
+                <TextField
+                  name="user_name"
+                  placeText="Enter your name"
+                  label="your name"
+                  register={register}
+                  errors={errors}
+                />
+                <TextField
+                  name="user_email"
+                  placeText="Enter your email"
+                  label="your email"
+                  type="email"
+                  register={register}
+                  errors={errors}
+                />
+              </div>
               <TextField
-                name="name"
-                placeText="Enter your name"
-                label="your name"
+                name="subject"
+                placeText="Enter your subject"
+                label="your subject"
+                register={register}
+                errors={errors}
+                isRequired={false}
               />
-              <TextField
-                name="email"
-                placeText="Enter your email"
-                label="your email"
+              <TextArea
+                name="message"
+                placeText="Enter your message"
+                label="your message"
+                register={register}
+                errors={errors}
               />
-            </div>
-            <TextField
-              name="subject"
-              placeText="Enter your subject"
-              label="your subject"
-            />
-            <TextArea
-              name="message"
-              placeText="Enter your message"
-              label="your message"
-            />
-            <Button title="send message" />
+              <Button title="send message" type="submit" />
+            </form>
           </div>
         </div>
       </div>

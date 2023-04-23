@@ -53,6 +53,14 @@ export default function Home() {
   const onScrollToSection = (id) => {
     scrollView(id);
   };
+
+  const onScrollToContactForm = () => {
+    contactRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "start",
+    });
+  };
   return (
     <>
       <Head>
@@ -80,7 +88,7 @@ export default function Home() {
               specializing in creating stylish, modern websites, web services
               and online stores.
             </p>
-            <Button title="Hire Me" />
+            <Button title="Hire Me" onClick={onScrollToContactForm} />
           </div>
           <div className="col-span-6 lg:col-span-5 flex justify-center md:justify-end mt-14 md:mt-0">
             <div className="image_box relative h-60 sm:h-72 lg:h-[400px] w-60 sm:w-72 lg:min-w-[400px] bg-[rgba(0,0,0,0.5)] rounded-full overflow-hidden">
@@ -97,7 +105,7 @@ export default function Home() {
           </div>
         </div>
         <div className="pt-20" ref={aboutRef}>
-          <AboutSection />
+          <AboutSection onClick={onScrollToContactForm} />
         </div>
         <div className="pt-20" ref={skillRef}>
           <SkillSection />

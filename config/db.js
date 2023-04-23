@@ -79,7 +79,8 @@ export const portfolioData = [
     link: "https://curebook.co",
     icon: "/images/react.svg",
     tags: ["React Js", "Redux Toolkit", "Chakra UI", "Framer Motion"],
-    description: "",
+    description:
+      "Front end development, UI/UX development, Api's integration, animation and more...",
     company: "2021 — Today ( years)",
   },
   {
@@ -94,7 +95,8 @@ export const portfolioData = [
       "Styled Components",
       "Bootstrap 5",
     ],
-    description: "",
+    description:
+      "Front end development, UI/UX development, Api's integration, animation and more...",
     company: "2021 — Today ( years)",
   },
   {
@@ -103,16 +105,18 @@ export const portfolioData = [
     link: "https://imperiallocum.com",
     icon: "/images/next-js.svg",
     tags: ["React Js", "Next Js", "Rtk Query", "Tailwind CSS", "Framer Motion"],
-    description: "",
+    description:
+      "Front end development, UI/UX development, Api's integration, animation and more...",
     company: "2022 — Today ( years)",
   },
   {
     title: "Front-end Engineer",
     location: "Lahore, PK",
-    link: "https://curebook.co",
+    link: "https://wasid-portfolio.vercel.app/",
     icon: "/images/next-js.svg",
     tags: ["React Js", "Next Js", "Tailwind CSS", "Framer Motion"],
-    description: "",
+    description:
+      "Front end development, UI/UX development, Api's integration, animation and more...",
     company: "2023 — Today ( years)",
   },
 ];

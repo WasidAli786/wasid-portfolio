@@ -2,7 +2,7 @@ import React from "react";
 import NextImage from "../NextImage";
 import Button from "../uiElements/Button";
 
-export default function AboutSection() {
+export default function AboutSection({ onClick }) {
   return (
     <>
       <div className="grid grid-cols-12 md:gap-10">
@@ -51,7 +51,7 @@ export default function AboutSection() {
               <li>Tailwind Css</li>
             </ul>
           </div>
-          <Button title="Let's Connect" />
+          <Button title="Let's Connect" onClick={onClick} />
         </div>
       </div>
     </>
