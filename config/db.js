@@ -40,7 +40,7 @@ export const skillsData = [
   },
   {
     title: "javascript",
-    percentage: "80",
+    percentage: "85",
   },
   {
     title: "react js",

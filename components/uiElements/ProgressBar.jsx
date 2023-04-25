@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ProgressBar({ items }) {
+export default function ProgressBar({ items, isVisible }) {
   return (
     <>
       <div className="space-y-2">
@@ -12,8 +12,8 @@ export default function ProgressBar({ items }) {
         </div>
         <div className="relative h-3 w-full bg-gray-600 rounded-full">
           <div
-            className="skill_line absolute top-0 left-0 h-full rounded-full"
-            style={{ width: items?.percentage + "%" }}
+            className="skill_line transition-all duration-500 delay-300 absolute top-0 left-0 h-full rounded-full"
+            style={{ width: isVisible ? items?.percentage + "%" : "0" }}
           ></div>
         </div>
       </div>

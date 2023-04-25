@@ -2,7 +2,7 @@ import React from "react";
 import { skillsData } from "@/config/db";
 import ProgressBar from "../uiElements/ProgressBar";
 
-export default function SkillSection() {
+export default function SkillSection({ isVisible }) {
   return (
     <>
       <div>
@@ -15,7 +15,7 @@ export default function SkillSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-5 mt-10">
           {skillsData?.map((items, index) => (
-            <ProgressBar key={index} items={items} />
+            <ProgressBar key={index} items={items} isVisible={isVisible} />
           ))}
         </div>
       </div>

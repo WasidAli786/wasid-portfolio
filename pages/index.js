@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import AboutSection from "@/components/home/AboutSection";
 import PortfolioSection from "@/components/home/PortfolioSection";
@@ -13,6 +13,39 @@ export default function Home() {
   const skillRef = useRef(null);
   const portfolioRef = useRef(null);
   const contactRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // useEffect(() => {
+  //   const handleIntersect = (entries, observer) => {
+  //     if (entries[0].isIntersecting) {
+  //       setIsVisible(true);
+  //       observer.unobserve(entries[0].target);
+  //       observer.disconnect();
+  //     }
+  //   };
+
+  //   const observer = new IntersectionObserver(handleIntersect);
+
+  //   if (skillRef) {
+  //     observer.observe(skillRef.current);
+  //   }
+
+  //   // If unmounting, then disconnect
+  //   return () => observer.disconnect();
+  // }, [skillRef]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { rootMargin: "-300px" }
+    );
+    observer.observe(skillRef.current);
+    return () => observer.disconnect();
+  }, [isVisible]);
+
+  console.log("isVisible", isVisible);
 
   //* scroll to particular section
   function scrollView(id) {
@@ -108,7 +141,7 @@ export default function Home() {
           <AboutSection onClick={onScrollToContactForm} />
         </div>
         <div className="pt-20" ref={skillRef}>
-          <SkillSection />
+          <SkillSection isVisible={isVisible} />
         </div>
         <div className="pt-20" ref={portfolioRef}>
           <PortfolioSection />
