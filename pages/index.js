@@ -13,39 +13,17 @@ export default function Home() {
   const skillRef = useRef(null);
   const portfolioRef = useRef(null);
   const contactRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const skillSectionRef = useRef(null);
+  const [isSkillVisible, setIsSkillVisible] = useState(false);
 
-  // useEffect(() => {
-  //   const handleIntersect = (entries, observer) => {
-  //     if (entries[0].isIntersecting) {
-  //       setIsVisible(true);
-  //       observer.unobserve(entries[0].target);
-  //       observer.disconnect();
-  //     }
-  //   };
-
-  //   const observer = new IntersectionObserver(handleIntersect);
-
-  //   if (skillRef) {
-  //     observer.observe(skillRef.current);
-  //   }
-
-  //   // If unmounting, then disconnect
-  //   return () => observer.disconnect();
-  // }, [skillRef]);
-
+  //* only run when skill section in visible
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { rootMargin: "-300px" }
-    );
-    observer.observe(skillRef.current);
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsSkillVisible(entry.isIntersecting);
+    });
+    observer.observe(skillSectionRef.current);
     return () => observer.disconnect();
-  }, [isVisible]);
-
-  console.log("isVisible", isVisible);
+  }, [isSkillVisible]);
 
   //* scroll to particular section
   function scrollView(id) {
@@ -141,7 +119,10 @@ export default function Home() {
           <AboutSection onClick={onScrollToContactForm} />
         </div>
         <div className="pt-20" ref={skillRef}>
-          <SkillSection isVisible={isVisible} />
+          <SkillSection
+            isSkillVisible={isSkillVisible}
+            skillSectionRef={skillSectionRef}
+          />
         </div>
         <div className="pt-20" ref={portfolioRef}>
           <PortfolioSection />
