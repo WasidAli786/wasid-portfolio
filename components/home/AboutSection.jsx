@@ -8,7 +8,7 @@ export default function AboutSection({ onClick }) {
       <div className="grid grid-cols-12 md:gap-10">
         <div className="hidden md:block col-span-5 relative h-[500px] w-full">
           <NextImage
-            src="/images/portfolio1.jpg"
+            src="/images/about.svg"
             alt="about-wasid"
             className="object-contain"
           />

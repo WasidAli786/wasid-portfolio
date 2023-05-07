@@ -77,7 +77,7 @@ export default function Home() {
       <NextHead
         title="Wasid-Ali | Portfolio"
         description="Looking for a skilled front-end developer to bring your website or application to life? I am front-end developers specialize in creating visually stunning and user-friendly web pages using HTML, CSS, React JS and Next JS with any UI library and integrate API's. From design mockups to responsive layouts, i can help bring your vision to life and ensure that your online presence is optimized for success. Contact us today to learn more about how our front-end development services can help take your website to the next level."
-        ogImage="/images/full-image.png"
+        ogImage="/images/ogImage.png"
         favicon="/favicon.png"
       />
       <Navbar onClick={onScrollToSection} />
@@ -106,7 +106,7 @@ export default function Home() {
               <div className="imageBox_content">
                 <div className="relative h-full w-full">
                   <NextImage
-                    src="/images/portfolio_pic.png"
+                    src="/images/portfolioPic.png"
                     alt="wasid-portfolio"
                     className="object-cover"
                     isPriority
